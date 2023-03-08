@@ -26,11 +26,11 @@ def register_page(request):
             messages.success(request, 'Account was created for ' + username)
 
             # register user as customer
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
-            Customer.objects.create(
-                user=user
-            )
+            # group = Group.objects.get(name='customer')
+            # user.groups.add(group)
+            # Customer.objects.create(
+            #     user=user
+            # )
             return redirect('login')
     context = {'form': form}
     return render(request, 'accounts/register.html', context)
